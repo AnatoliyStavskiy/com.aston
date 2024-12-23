@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,9 +6,9 @@ public class Main {
         checkSumSign();                             // Задание 2
         printColor();                               // Задание 3
         compareNumbers();                           // Задание 4
-        limitsTesting(13,-4);                 // Задание 5
+        limitsTesting(13, -4);                 // Задание 5
         checkPositivity(0);                  // Задание 6
-        positiveOrNegative(-1);              // Задание 7
+        positiveOrNegative(0);               // Задание 7
         stringQuantity("Привет", 3);     // Задание 8
         leapYear(1900);                             // Задание 9
         zeroReplacement();                          // Задание 10
@@ -34,11 +34,11 @@ public class Main {
     }
 
     static void printColor() {
-        int value = 101;
+        int value = 100;
 
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 & value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else
             System.out.println("Зеленый");
@@ -54,7 +54,7 @@ public class Main {
     }
 
     static boolean limitsTesting(int a, int b) {
-        return ((a + b > 9) & (a + b < 21));
+        return (a + b) > 9 & (a + b) < 21;
     }
 
     static void checkPositivity(int number) {
@@ -64,11 +64,7 @@ public class Main {
     }
 
     static boolean positiveOrNegative(int number) {
-        boolean result;
-        if (number < 0) {
-            result = true;
-        } else result = false;
-        return result;
+        return number < 0;
     }
 
     static void stringQuantity(String str, int number) {
@@ -78,7 +74,7 @@ public class Main {
     }
 
     static boolean leapYear(int year) {
-        return  (year % 4 == 0 & year % 100 != 0 || year % 400 == 0);
+        return (year % 4 == 0 & year % 100 != 0 || year % 400 == 0);
     }
 
     static void zeroReplacement() {
@@ -116,15 +112,13 @@ public class Main {
     static void fillingWithNumberOne() {
         int[][] array = new int[5][5];
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (i == j || (j == array.length - i - 1)) {
-                    array[i][j] = 1;
-                }
-                System.out.print(array[i][j] + " ");
+        for (int i = 0, j = array.length - 1; i < array.length; i++, j--) {
+            if (i == array.length - j - 1) {
+                array[i][j] = 1;
+                array[j][j] = 1;
             }
-            System.out.println();
         }
+        System.out.println(Arrays.deepToString(array));
     }
 
     static int[] arrayGeneration(int len, int initialValue) {
