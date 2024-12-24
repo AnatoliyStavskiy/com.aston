@@ -16,5 +16,13 @@ public class Main {
         Park.Attraction attraction1 = cityPark.new Attraction("Mini-Jet", "08:00-20:00", 15);
         Park.Attraction attraction2 = cityPark.new Attraction("Ferris Wheel", "13:00-23:00", 20);
         Park.Attraction attraction3 = new Park().new Attraction("Сarousel", "08:00-15:00", 5);
+
+        Park.Attraction attraction4 = new Park("VictoryPark").new Attraction("Roller coaster", "09:00-19:00", 30);
+        Park.Attraction attraction5 = new Park("Stone Park").new Attraction("Roller coaster", "09:00-19:00", 30);
+        Park.Attraction attraction6 = new Park("Chelyuskinites Park").new Attraction("Roller coaster", "09:00-19:00", 30);
+
+        System.out.println(attraction4.whatPark());
+        System.out.println(attraction5.whatPark());
+        System.out.println(attraction6.whatPark());
     }
 }
