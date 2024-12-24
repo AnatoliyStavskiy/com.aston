@@ -1,6 +1,5 @@
 package lesson3;
 
-import java.util.Objects;
 
 public class Park {
 
