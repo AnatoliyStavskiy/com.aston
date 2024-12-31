@@ -1,9 +1,24 @@
 package lesson5;
 
 public class Cat extends Animal {
+
     private static int catCount;
     private int appetite;
     private boolean satiety;
+
+    public Cat(String name, int appetite) {
+        super(name);
+        this.appetite = appetite;
+        catCount++;
+    }
+
+    public static int getCount() {
+        return catCount;
+    }
+
+    public boolean isSatiety() {
+        return satiety;
+    }
 
     public static void eating(Cat[] cats, Plate plate) {
         for (Cat cat : cats) {
@@ -24,20 +39,6 @@ public class Cat extends Animal {
     @Override
     public void swim(int length) {
         System.out.println("Кот не умеет плавать");
-    }
-
-    public Cat(String name, int appetite) {
-        super(name);
-        this.appetite = appetite;
-        catCount++;
-    }
-
-    public static int getCount() {
-        return catCount;
-    }
-
-    public boolean isSatiety() {
-        return satiety;
     }
 
     @Override

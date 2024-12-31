@@ -7,6 +7,13 @@ public class Rectangle implements Calculation {
     private String filling;
     private String borderColor;
 
+    public Rectangle(double width, double height, String filling, String borderColor) {
+        this.width = width;
+        this.height = height;
+        this.filling = filling;
+        this.borderColor = borderColor;
+    }
+
     @Override
     public double perimeter() {
         return (width + height) * 2;
@@ -20,12 +27,5 @@ public class Rectangle implements Calculation {
     @Override
     public void print() {
         System.out.println("[ " + perimeter() + ", " + area() + ", " + filling + ", " + borderColor + " ]");
-    }
-
-    public Rectangle(double width, double height, String filling, String borderColor) {
-        this.width = width;
-        this.height = height;
-        this.filling = filling;
-        this.borderColor = borderColor;
     }
 }

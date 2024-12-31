@@ -4,12 +4,12 @@ public class Plate {
 
     private int countFood;
 
-    public void addFood(int count) {
-        countFood += count;
-    }
-
     public Plate(int countFood) {
         this.countFood = countFood;
+    }
+
+    public void addFood(int count) {
+        countFood += count;
     }
 
     public int getCountFood() {

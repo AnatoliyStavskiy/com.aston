@@ -4,6 +4,15 @@ public class Dog extends Animal {
 
     private static int dogCount;
 
+    public Dog(String name) {
+        super(name);
+        dogCount++;
+    }
+
+    public static int getCount() {
+        return dogCount;
+    }
+
     @Override
     public void run(int length) {
         if (length > 0 & length < 501) {
@@ -16,14 +25,5 @@ public class Dog extends Animal {
         if (length > 0 & length < 11) {
             super.swim(length);
         } else System.out.println("Столько собака не может проплыть");
-    }
-
-    public Dog(String name) {
-        super(name);
-        dogCount++;
-    }
-
-    public static int getCount() {
-        return dogCount;
     }
 }

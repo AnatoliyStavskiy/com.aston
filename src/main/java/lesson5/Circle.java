@@ -6,6 +6,12 @@ public class Circle implements Calculation {
     private String filling;
     private String borderColor;
 
+    public Circle(double radius, String filling, String borderColor) {
+        this.radius = radius;
+        this.filling = filling;
+        this.borderColor = borderColor;
+    }
+
     @Override
     public double perimeter() {
         return 2 * Math.PI * radius;
@@ -19,11 +25,5 @@ public class Circle implements Calculation {
     @Override
     public void print() {
         System.out.println("[ " + perimeter() + ", " + area() + ", " + filling + ", " + borderColor + " ]");
-    }
-
-    public Circle(double radius, String filling, String borderColor) {
-        this.radius = radius;
-        this.filling = filling;
-        this.borderColor = borderColor;
     }
 }
