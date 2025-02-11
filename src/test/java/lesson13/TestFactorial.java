@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestFactorial {
-
     Factorial factorial = new Factorial();
 
     @Test
