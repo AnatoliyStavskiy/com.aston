@@ -1,7 +1,7 @@
 package lesson13;
 
 public class Factorial {
-    public static long factorialCalculator(long number) {
+    public long factorialCalculator(long number) {
         long result = 1;
 
         if (number < 0 || number > 20) {
