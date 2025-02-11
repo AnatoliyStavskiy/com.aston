@@ -35,14 +35,14 @@ public class TestFactorial {
 
     @Test(expectedExceptions = IllegalArgumentException.class,
             expectedExceptionsMessageRegExp = "Допустимые значения факториала для типа long 0-20")
-    @Name("Проверка -2!")
+    @Name("Проверка  -2!")
     void testNegativeFactorial() {
         factorial.factorialCalculator(-2);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class,
             expectedExceptionsMessageRegExp = "Допустимые значения факториала для типа long 0-20")
-    @Name("Проверка >20!")
+    @Name("Проверка  >20!")
     public void testFactorialMoreOfRealType() {
         factorial.factorialCalculator(21);
     }
