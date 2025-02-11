@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TestFactorial {
+
     Factorial factorial = new Factorial();
 
     @Test
@@ -42,7 +43,7 @@ public class TestFactorial {
     @Test(expectedExceptions = IllegalArgumentException.class,
             expectedExceptionsMessageRegExp = "Допустимые значения факториала для типа long 0-20")
     @Name("Проверка >20!")
-    void testFactorialMoreOfRealType() {
+    public void testFactorialMoreOfRealType() {
         factorial.factorialCalculator(21);
     }
 }
