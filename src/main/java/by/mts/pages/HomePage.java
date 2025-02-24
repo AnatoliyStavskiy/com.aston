@@ -76,7 +76,6 @@ public class HomePage {
         enterText(By.xpath(HomePageXpath.INPUT_EMAIL_XPATH), "AstonTest@gmail.com");
 
         clickElement(By.xpath(HomePageXpath.CONTINUE_BUTTON_XPATH));
-
         switchToFrame(By.xpath(HomePageXpath.PAY_FRAME_XPATH));
 
         return webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.FULL_PAY_FRAME_XPATH))).getText();

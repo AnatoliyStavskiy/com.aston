@@ -1,26 +1,20 @@
 package by.mts.ui;
 
-import by.mts.driver.Driver;
 import by.mts.pages.HomePage;
 import by.mts.pages.HomePageMessages;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
 public class HomePageTest extends BaseTest {
 
-    @BeforeEach
-    public void setUp() {
-        Driver.getDriver().get("https://mts.by");
-    }
+    HomePage homePage = new HomePage();
 
     @Test
     @DisplayName("Проверка названия блока: Онлайн пополнение без комиссии")
     public void testBlockName() {
-        HomePage homePage = new HomePage();
         homePage.cookieAgree();
         Assertions.assertEquals(homePage.checkBlockName(), "Онлайн пополнение\n" +
                 "без комиссии");
@@ -29,7 +23,6 @@ public class HomePageTest extends BaseTest {
     @Test
     @DisplayName("Проверка логотипов платежных систем")
     public void testLogoPaySystems() {
-        HomePage homePage = new HomePage();
         homePage.cookieAgree();
         SoftAssertions softAssertions = new SoftAssertions();
 
@@ -59,7 +52,6 @@ public class HomePageTest extends BaseTest {
     @Test
     @DisplayName("Проверка ссылки Подробнее о сервисе")
     public void testAboutServiceLink() {
-        HomePage homePage = new HomePage();
         homePage.cookieAgree();
         Assertions.assertEquals(homePage.checkAboutServiceLink(), HomePageMessages.ABOUT_SERVICE_LINK);
     }
@@ -67,7 +59,6 @@ public class HomePageTest extends BaseTest {
     @Test
     @DisplayName("Проверка оплаты связи")
     public void testConfirmPayFrame() {
-        HomePage homePage = new HomePage();
         homePage.cookieAgree();
         Assertions.assertEquals(homePage.checkPayConnection(), HomePageMessages.CONFIRM_PAY_MESSAGE);
     }

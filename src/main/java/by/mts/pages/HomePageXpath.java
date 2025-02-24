@@ -19,7 +19,7 @@ public class HomePageXpath {
     public static final String INPUT_EMAIL_XPATH = "//*[@id='connection-email']";
     public static final String CONTINUE_BUTTON_XPATH = "//*[@id='pay-connection']/button";
 
-    public static final String PAY_FRAME_XPATH = "//iframe[@class='bepaid-iframe']";
     public static final String FULL_PAY_FRAME_XPATH = "//span[@class='card-page__card-pay__title']";
+    public static final String PAY_FRAME_XPATH = "//iframe[@class='bepaid-iframe']";
 
 }

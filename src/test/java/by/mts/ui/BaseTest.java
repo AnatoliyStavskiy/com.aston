@@ -1,8 +1,8 @@
 package by.mts.ui;
 
 import by.mts.driver.Driver;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 public class BaseTest {
 
