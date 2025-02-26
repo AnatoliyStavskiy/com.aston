@@ -80,4 +80,13 @@ public class HomePage {
 
         return webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.FULL_PAY_FRAME_XPATH))).getText();
     }
+
+    public void goPayConnection() {
+        enterText(By.xpath(HomePageXpath.INPUT_PHONE_XPATH), "297777777");
+        enterText(By.xpath(HomePageXpath.INPUT_SUM_XPATH), "10");
+        enterText(By.xpath(HomePageXpath.INPUT_EMAIL_XPATH), "AstonTest@gmail.com");
+
+        clickElement(By.xpath(HomePageXpath.CONTINUE_BUTTON_XPATH));
+        switchToFrame(By.xpath(HomePageXpath.PAY_FRAME_XPATH));
+    }
 }

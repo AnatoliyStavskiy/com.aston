@@ -25,7 +25,7 @@ public class CommunicationServiceTest extends BaseTest {
     public void testCheckSumButton() {
         homePage.cookieAgree();
         communicationService.checkPayConnection();
-        Assertions.assertEquals(communicationService.checkText(CommunicationServiceXpath.CHECK_TEXT_SUM_BUTTON_XPATH), " Оплатить  10.00 BYN ");
+        Assertions.assertEquals(communicationService.checkText(CommunicationServiceXpath.CHECK_TEXT_SUM_BUTTON_XPATH), "10.00 BYN");
     }
 
     @Test
@@ -33,8 +33,7 @@ public class CommunicationServiceTest extends BaseTest {
     public void testCheckPhoneNumber() {
         homePage.cookieAgree();
         communicationService.checkPayConnection();
-        Assertions.assertEquals(communicationService.checkText(CommunicationServiceXpath.CHECK_TEXT_NUMBER_XPATH), "Оплата: Услуги связи\n" +
-                "Номер:375297777777");
+        Assertions.assertEquals(communicationService.checkText(CommunicationServiceXpath.CHECK_TEXT_NUMBER_XPATH), "Оплата: Услуги связи Номер:375297777777");
     }
 
     @Test
@@ -63,23 +62,24 @@ public class CommunicationServiceTest extends BaseTest {
     @DisplayName("Проверка логотипов платежных систем")
     public void testIconPaySystems() {
         homePage.cookieAgree();
+        homePage.goPayConnection();
         SoftAssertions softAssertions = new SoftAssertions();
 
         softAssertions.assertThat(communicationService.checkCardIcon(CommunicationServiceXpath.CHECK_VISACARD_ICON_XPATH))
                 .as("Логотип Visa отсутствует")
-                .isTrue();
+                .isEqualTo("assets/images/payment-icons/card-types/visa-system.svg");
 
         softAssertions.assertThat(communicationService.checkCardIcon(CommunicationServiceXpath.CHECK_MASTERCARD_ICON_XPATH))
                 .as("Логотип MasterCard отсутствует")
-                .isTrue();
+                .isEqualTo("assets/images/payment-icons/card-types/mastercard-system.svg");
 
         softAssertions.assertThat(communicationService.checkCardIcon(CommunicationServiceXpath.CHECK_BELCARD_ICON_XPATH))
                 .as("Логотип BelCard отсутствует")
-                .isTrue();
+                .isEqualTo("assets/images/payment-icons/card-types/belkart-system.svg");
 
-        softAssertions.assertThat(communicationService.checkCardIcon(CommunicationServiceXpath.CHECK_WORLDCARD_ICON_XPATH))
+        softAssertions.assertThat(communicationService.checkCardIcon(CommunicationServiceXpath.CHECK_WORLDCARD_ICON_XPAT))
                 .as("Логотип Мир отсутствует")
-                .isTrue();
+                .isEqualTo("assets/images/payment-icons/card-types/maestro-system.svg");
 
         softAssertions.assertAll();
     }

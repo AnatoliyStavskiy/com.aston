@@ -20,10 +20,6 @@ public class CommunicationService {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public String checkEmptyField(String str) {
-        return driver.findElement(By.xpath(str)).getDomAttribute("placeholder");
-    }
-
     private void enterText(By locator, String text) {
         WebElement element = driver.findElement(locator);
         element.click();
@@ -55,7 +51,7 @@ public class CommunicationService {
         return driver.findElement(By.xpath(str)).getText();
     }
 
-    public boolean checkCardIcon(String str) {
-        return driver.findElement(By.xpath(str)).isDisplayed();
+    public String checkCardIcon(String str) {
+        return driver.findElement(By.xpath(str)).getDomAttribute("src");
     }
 }
