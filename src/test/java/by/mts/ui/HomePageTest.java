@@ -2,12 +2,13 @@ package by.mts.ui;
 
 import by.mts.pages.HomePage;
 import by.mts.pages.HomePageMessages;
+import io.qameta.allure.Epic;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
+@Epic("Проверка формы онлайн пополнение без комиссии")
 public class HomePageTest extends BaseTest {
 
     HomePage homePage = new HomePage();

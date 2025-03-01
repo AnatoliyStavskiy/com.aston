@@ -3,10 +3,12 @@ package by.mts.ui;
 import by.mts.pages.HomePage;
 import by.mts.pages.homeInternet.HomeInternet;
 import by.mts.pages.homeInternet.HomeInternetXpath;
+import io.qameta.allure.Epic;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@Epic("Проверка формы Домашний интернет")
 public class HomeInternetTest extends BaseTest {
 
     HomePage homePage = new HomePage();
