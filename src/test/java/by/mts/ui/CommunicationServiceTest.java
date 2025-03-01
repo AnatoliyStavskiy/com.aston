@@ -3,11 +3,13 @@ package by.mts.ui;
 import by.mts.pages.HomePage;
 import by.mts.pages.communicationService.CommunicationService;
 import by.mts.pages.communicationService.CommunicationServiceXpath;
+import io.qameta.allure.Epic;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@Epic("Проверка формы Услуги связи")
 public class CommunicationServiceTest extends BaseTest {
     HomePage homePage = new HomePage();
     CommunicationService communicationService = new CommunicationService();

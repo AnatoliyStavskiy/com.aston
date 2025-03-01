@@ -3,10 +3,12 @@ package by.mts.ui;
 import by.mts.pages.HomePage;
 import by.mts.pages.installmentPlan.InstallmentPlan;
 import by.mts.pages.installmentPlan.InstallmentPlanXpath;
+import io.qameta.allure.Epic;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@Epic("Тест формы Рассрочка")
 public class InstallmentPlanTest extends BaseTest {
 
     HomePage homePage = new HomePage();
@@ -19,7 +21,7 @@ public class InstallmentPlanTest extends BaseTest {
         SoftAssertions softAssertions = new SoftAssertions();
 
         softAssertions.assertThat(installmentPlan.checkEmptyField(InstallmentPlanXpath.INPUT_SCORE_XPATH))
-                .isEqualTo("Номер абонента");
+                .isEqualTo("Номер счета на 44");
 
         softAssertions.assertThat(installmentPlan.checkEmptyField(InstallmentPlanXpath.INPUT_SUM_XPATH))
                 .isEqualTo("Сумма");
